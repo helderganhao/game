@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Language" content="pt">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Caminho das Lendas</title>
+<!-- .....................styles..................... -->
+    <style>
+      /*** tag body ***/
+      body {
+          background-color:black;
+          color:white;
+          font-family:Arial;
+          font-size:22px
+      }
+      /*** tag div para centralizar conteudo ***/
+      div {
+          text-align: center;  
+      }
+      /*** botão redondo ***/
+      button {
+        background-color: black;
+        border: 3px solid #6A19B5;
+        color: #6A19B5;
+        /*padding: 16px;*/
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        height: 50px;
+        width: 50px;
+        margin: 1px 1px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      /*** tag input text ***/
+      input[type=text] {
+        border: 3px solid #6A19B5;
+        color: #6A19B5;
+        background-color: black;
+        border-radius: 25%;
+        padding:10px;
+        font-family:Arial;
+        font-size:20px;
+        text-align: center;
+        width:20px;
+      }
+    </style>
+<!-- ................................................ -->
+  </head>
+
+  <body>
+
+  <div>
+
+    <h1>Arraul</h1>
+    <p><br></p>
+    <p>PISTA</p>
+    <p><br></p>
+
+    <form id="F2" method = "post">
+    <input type="text" id="campo1" name="campo1" oninput="focusCampo2()" required/>
+    <input type="text" id="campo2" name="campo2" oninput="submitForm()" required/>
+    </form>
+
+<!--    <button onclick="document.location='03.html'">&#10095;</button>  -->
+  </div>
+
+<!-- .....................scripts..................... -->
+<script>
+    function focusCampo2() {
+      // Definir o foco no segundo campo quando o primeiro for preenchido
+      document.getElementById('campo2').focus();
+    }
+
+    function submitForm() {
+      var val1 = document.getElementById('campo1').value.toLowerCase();
+      var val2 = document.getElementById('campo2').value.toLowerCase();
+      var valx = val1.concat("", val2);
+  
+      if(valx == "um") {
+          document.getElementById('F2').action = "03.html";
+          document.getElementById('F2').submit();
+      } else {
+          document.getElementById('F2').action = "1B.html";
+          document.getElementById('F2').submit();
+      }
+    }
+</script>
+<!-- ................................................. -->
+</body>
+</html>
